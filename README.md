@@ -3,3 +3,6 @@ Repositório dos códigos-fonte utilizados no trabalho de conclusão de curso so
 
 Cena 1 - Sorter
 <img src="./Cena1.gif" alt="My Project GIF" width:400px>
+
+Cena 2 - Manipulador
+<img src="./Cena2-1.gif" alt="My Project GIF" width:400px>
