@@ -15,7 +15,7 @@ public class Crane : MonoBehaviour
     public bool grab = false,manual = false;
     private GameObject box,junta;
     public float setposZ=0,setposY=0,setangle=0, speed = 0.05f;
-    public int coilZ,coilY,coilangle,regZ,regTheta,grabCoil;
+    public int coilZ,coilY,coilangle,regZ,regY,regTheta,grabCoil;
     Behaviour halo;
     
     void Start()
@@ -112,7 +112,7 @@ public class Crane : MonoBehaviour
           k = speed*(pos - junta.gameObject.transform.localPosition.y);
            // Atualiza o valor do angulo local do eixo Z
           junta.gameObject.transform.localPosition = new Vector3(0,k,0) + junta.gameObject.transform.localPosition;
-           if(Math.Abs(pos - junta.gameObject.transform.localPosition.y) < 0.00001)
+           if(Math.Abs(pos - junta.gameObject.transform.localPosition.y) < 0.001)
            {
                junta.gameObject.transform.localPosition = new Vector3(junta.gameObject.transform.localPosition.x, pos, junta.gameObject.transform.localPosition.z); 
            } 
@@ -150,11 +150,11 @@ public class Crane : MonoBehaviour
           k = speed*(pos - axis.gameObject.transform.localPosition.z);
         // Atualiza o valor do angulo local do eixo Y
           axis.gameObject.transform.localPosition = new Vector3(0,0,k) + axis.gameObject.transform.localPosition;
-           if(Math.Abs(pos - axis.gameObject.transform.localPosition.z) < 0.00001)
+           if(Math.Abs(pos - axis.gameObject.transform.localPosition.z) < 0.001)
            {
                axis.gameObject.transform.localPosition = new Vector3(axis.gameObject.transform.localPosition.x, axis.gameObject.transform.localPosition.y, pos); 
            } 
-        // Atualiza o valor do registrador de feedback do eixo Z
-          FactoryManager.instance.SetInputReg(regZ, (int)(axis.gameObject.transform.localPosition.z*100));
+        // Atualiza o valor do registrador de feedback do eixo y
+          FactoryManager.instance.SetInputReg(regY, (int)(axis.gameObject.transform.localPosition.z*100));
    }   
 }

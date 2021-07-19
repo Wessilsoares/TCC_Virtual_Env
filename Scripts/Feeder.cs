@@ -41,7 +41,7 @@ public class Feeder : MonoBehaviour
     //Finaliza a interação com o recipiente
     void OnTriggerExit(Collider co)
     {
-        objeto.gameObject.SendMessage("FillNo");
+        objeto.gameObject.SendMessage("NoFill");
         objeto = null;        
     }
 }

@@ -29,7 +29,7 @@ public class Esteira : MonoBehaviour
 	void OnCollisionEnter(Collision co)
 	{
         //define o estado do estado que está na esteira
-        co.gameObject.SendMessage("EstadoEsteira",ligado);
+        co.gameObject.GetComponent<ObjEsteira>().EstadoEsteira(ligado);
         
         //mantém o objeto "acordado"
         co.gameObject.GetComponent<Rigidbody>().sleepThreshold = 0f; 
@@ -42,7 +42,7 @@ public class Esteira : MonoBehaviour
     private IEnumerator OnCollisionStay(Collision co){
         
         //define o estado do estado que está na esteira
-        co.gameObject.SendMessage("ligaesteira",ligado);
+        co.gameObject.GetComponent<ObjEsteira>().EstadoEsteira(ligado);
 
         //Define o ponto para onde a caida deve se mover
         co.gameObject.GetComponent<ObjEsteira>().target = this.gameObject.transform.Find("target").gameObject.transform.position;
