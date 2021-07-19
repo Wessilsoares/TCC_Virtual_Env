@@ -6,3 +6,6 @@ Cena 1 - Sorter
 
 Cena 2 - Manipulador
 <img src="./Cena2-1.gif" alt="My Project GIF" width:400px>
+
+Cena 2 - Alimentador
+<img src="./Cena2-2.gif" alt="My Project GIF" width:400px>
